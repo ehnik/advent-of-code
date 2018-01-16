@@ -14,9 +14,12 @@ input = input.map( (line) => { //converts input to array of arrays, populates ha
 let lastLayerDepth = parseInt(input[input.length-2][0]);
 let severity = 0;
 let currentDepth = 0; //depth of layer that packet is currently on
+//part 2: let seconds = 0;
 let scannerStart, currentRange;
 
 while (currentDepth<=lastLayerDepth){
+  console.log(currentDepth)
+
   if(hash.hasOwnProperty(currentDepth.toString())){ //checks if packet is on layer with scanner
     currentRange = hash[currentDepth.toString()] - 1 //subtract one from range to reflect position in range array (which must mirror )
     if(currentDepth%currentRange==0&&(currentDepth/currentRange)%2==0){
